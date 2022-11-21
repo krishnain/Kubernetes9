@@ -1,0 +1,17 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: jenkins-service
+  labels:
+    author: intelliqit
+spec:
+  type: LoadBalancer
+  ports:
+    - targetPort: 8080
+      port: 8080
+  selector:
+    author: intelliqit
+    type: ci-cd 
+...
+

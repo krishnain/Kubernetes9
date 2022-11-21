@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: httpd-deamon
+  labels:
+    author: intelliqit
+spec:
+  selector:
+    matchLabels:
+      author: intelliqit
+  template:
+    metadata:
+      name: httpd-pod
+      labels:
+        author: intelliqit
+    spec:
+      containers:
+        - name: my-httpd
+          image: httpd
+...
+      
