@@ -1,0 +1,19 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-pod
+  labels:
+    type: proxy
+spec:
+  containers:
+    - name: mynginx
+      image: nginx
+  tolerations:
+    - key: slave2
+      value: intelliqit2
+      effect: NoSchedule
+      operator: Equal
+    
+    
+    
